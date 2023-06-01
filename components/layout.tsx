@@ -7,7 +7,12 @@ import Link from 'next/link';
 const name = 'Fast Ninja';
 export const siteTitle = 'Next.js Sample Website';
 
-export default function Layout({ children, home }) {
+interface LayoutInterface {
+  children: React.ReactNode;
+  home?: boolean;
+}
+
+export default function Layout({ children, home } : LayoutInterface) {
   return (
     <div className={styles.container}>
       <Head>
